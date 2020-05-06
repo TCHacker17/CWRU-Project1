@@ -2,11 +2,10 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/network_diagram1.PNG)
+(Images/network_diagram1.PNG)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the elk-install.yaml file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
   elk-install.yaml
 
 This document contains the following details:
@@ -22,16 +21,15 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 Load balancing ensures that the application will be highly distributed, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Load balancers ensure that there is a lesser chance of a DoS or DDoS (aka they protect the availablity of data). It does this by making sure each machine in the system is receiving an equal amount of traffic. This makes sure neither machine gets overwhelmed and thus, won't stop responding to users. Without a load balancer this type of issue can become very common. 
 
 The advantage of having a jump-box is that it can ensure that the only person who has access to the network is someone who has access to said jumpbox. It also adds an extra layer of security rather than giving someone direct access to the network with their personal machine.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file systems and system logs.
-- _TODO: What does Filebeat watch for?_
+- What does Filebeat watch for?_
 We installed filebeat which is used to forward and centralize log data. It monitors the log files or locations that you specify, collects log events, and forwards them either to Elasiticsearch or Logstash for indexing. 
-- _TODO: What does Metricbeat record?_
+- What does Metricbeat record?_
 Metric beat collects metrics from the OS on certain systems which can help in reviewing the amount of activity or use those machines are receiving over time. In this way it helps you visualize the usage of the application. 
 
 The configuration details of each machine may be found below.
@@ -65,14 +63,11 @@ A summary of the access policies in place can be found in the table below.
 | DVMA-2        |  No                 |   10.0.0.4                                        |
 | Elk Server    |  No                 |   [40.78.40.46, 10.0.0.4] 10.0.0.5, 10.0.0.6      |
 
-### Elk Configuration
+### Elk Configuration/
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
-The main advantage of automating configuration with Ansible is that rather than having to go from the jump box to every machine on the network, you can run one program from the jump box and it will install and configure all of the necessary machines on the network. 
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because rather than having to go from the jump box and ssh into every machine on the network, you can run one program from the jump box and it will install and configure all of the necessary machines. For a larger network, what would normally take an hour will now only take a minute.  
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ... 1. The install-elk.yml file first installs docker
 - ... 2. Installs a python package manager called pip
 - ... 3. Installs a Docker python module
@@ -81,11 +76,10 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/elkdocker_ps_success.PNG)
+(Images/elkdocker_ps_success.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
 -... 10.0.0.5
 -... 10.0.0.6
 
