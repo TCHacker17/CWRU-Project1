@@ -1,0 +1,20 @@
+---
+- name: Add filebeat to the DVWA VMs
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Copy filebeatconfig file to new docker container
+    copy:
+      src: /etc/ansible/files/filebeatconfig.yml
+      dest: /etc/filebeat/filebeat.yml
+  - name: download filebeat
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb
+  - name: run filebeat download
+    command: sudo dpkg -i filebeat-7.6.1-amd64.deb
+  - name: enable filebeat
+    command: filebeat modules enable system
+  - name: setup filebeat
+    command: filebeat setup
+  - name: run filebeat
+    command: service filebeat start
+
