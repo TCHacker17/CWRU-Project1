@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-(Images/network_diagram1.PNG)
+![network diagram](Images/network_diagram1.PNG)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the elk-install.yaml file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -72,11 +72,11 @@ The playbook implements the following tasks:
 - ... 2. Installs a python package manager called pip
 - ... 3. Installs a Docker python module
 - ... 4. Expands the virtual memory of the Elk Server (essentially gives the server more ram to handle processing)
-- ... 5. Download and luanch the docker web container
+- ... 5. Download and launch the docker web container
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-(Images/elkdocker_ps_success.PNG)
+![elkdocker success image](Images/elkdocker_ps_success.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
